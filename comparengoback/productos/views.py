@@ -8,7 +8,7 @@ from productos.serializers import ProductoSerializer, ProductoRandomSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-class ProdViewSet(viewsets.ModelViewSet):
+class ProdViewSet(viewsets.ModelViewSet): 
     queryset = ProductoRandom.objects.all()
     serializer_class = ProductoRandomSerializer
     @action(
@@ -18,7 +18,7 @@ class ProdViewSet(viewsets.ModelViewSet):
         url_name='get-producto'
     )
     def get_producto(self, request):
-        queryset = ProductoRandom.objects.using('d1').all().values()
+        queryset = ProductoRandom.objects.all().values()
 
             
 

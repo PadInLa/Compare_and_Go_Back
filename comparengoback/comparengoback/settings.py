@@ -27,6 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_WHITELIST = [
+    # 'http://localhost',
+    # Tocaba agregarle el :3000 porque es el
+    # puerto que se usa para el frontend ;)
+    'http://127.0.0.1:8000/',
+    'https://covid-news.vercel.app'
+]
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -77,22 +85,16 @@ WSGI_APPLICATION = 'comparengoback.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': { },
-    'd1': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'preciosD1.db',
-    },
-    'olimpica': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'preciosOlimpica.db',
-    },
-    'jumbo': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'preciosJumbo.db',
-    },
-}
+    'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'postgres',
+       'USER': 'postgres',
+       'PASSWORD': '1234',
+       'HOST': 'localhost',
+       'PORT': '5432',
+     },
 
-DATABASE_ROUTERS = [ ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -5,9 +5,10 @@ from productos.models import ProductoRandom
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductoRandom
-        fields = ['indice', 'nombre', 'precio']
+        fields = ['indice', 'nombre', 'precio', 'tienda']
 
 class ProductoRandomSerializer(serializers.Serializer):
     nombre = serializers.CharField()
     precio = serializers.CharField()
+    tienda = serializers.CharField()
 
