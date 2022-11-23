@@ -27,13 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ORIGIN_WHITELIST = [
-    # 'http://localhost',
-    # Tocaba agregarle el :3000 porque es el
-    # puerto que se usa para el frontend ;)
-    'http://127.0.0.1:8000/',
-    'https://covid-news.vercel.app'
-]
+# CORS_ORIGIN_WHITELIST = [
+#     # 'http://localhost',
+#     # Tocaba agregarle el :3000 porque es el
+#     # puerto que se usa para el frontend ;)
+#     'http://127.0.0.1:8000/',
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'productos',
+    'corsheaders',
     'rest_framework',
+    'productos',
+    
     
 ]
 
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'comparengoback.urls'
