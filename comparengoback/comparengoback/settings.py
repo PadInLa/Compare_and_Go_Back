@@ -25,14 +25,16 @@ SECRET_KEY = 'django-insecure-ug7b1%ggxdp4&do@zds*mr5dn^6oizzo@8sik1x^fihq!w7b3$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-# CORS_ORIGIN_WHITELIST = [
+# CORS_ORIGIN_WHITELIST = (
 #     # 'http://localhost',
 #     # Tocaba agregarle el :3000 porque es el
-#     # puerto que se usa para el frontend ;)
-#     'http://127.0.0.1:8000/',
-# ]
+#     # puerto que se usa para el frontend ;
+#     'https://landing-page-seven-flax.vercel.app',
+#     'http://127.0.0.1:5500',
+#     'http://127.0.0.1:8000'
+# )
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
