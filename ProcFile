@@ -1,1 +1,0 @@
-web: gunicorn comparengoback.wsgi --log-file -
